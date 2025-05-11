@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desbloqueio Morra Pobre</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: white;
+        }
+
+        h1, h2, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Estilos de animação */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Cabeçalho */
+        .header {
+            position: relative;
+            height: 100vh;
+            background-color: #111;
+            background-image: url('https://via.placeholder.com/1920x1080.png?text=Background'); /* Coloque a URL do seu vídeo ou imagem */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 4rem;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .header h1 {
+            font-size: 4rem;
+            animation: pulse 1s infinite;
+        }
+
+        /* CTA Button */
+        .cta-btn {
+            background-color: #f00;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: inline-block;
+            text-transform: uppercase;
+            text-align: center;
+            animation: pulse 1s infinite;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Conteúdo da Página */
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .bullet-points {
+            list-style-type: none;
+            padding: 0;
+            font-size: 1.5rem;
+            margin-top: 30px;
+        }
+
+        .bullet-points li {
+            margin: 15px 0;
+        }
+
+        .countdown {
+            font-size: 2rem;
+            color: red;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+
+        /* Testemunhos */
+        .testimonials {
+            background-color: #222;
+            color: white;
+            padding: 40px 20px;
+            font-size: 1.5rem;
+            margin-top: 40px;
+        }
+
+        /* Escassez */
+        .scarcity {
+            background-color: #f00;
+            color: white;
+            padding: 15px;
+            margin-top: 40px;
+            font-size: 1.5rem;
+        }
+
+        /* Rodapé */
+        .footer {
+            background-color: #111;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho com a mensagem principal -->
+    <div class="header">
+        <h1>If You Don’t Unlock Your Mind, You’ll Die Poor. Period.</h1>
+        <a href="#cta" class="cta-btn">Unlock My Freedom Now</a>
+    </div>
+
+    <!-- Seção de introdução -->
+    <div class="section">
+        <p><strong>This is not a course. This is a bomb. If you’re broke, read it. If you ignore it, you deserve to stay poor.</strong></p>
+    </div>
+
+    <!-- Bullet points de transformação -->
+    <div class="section">
+        <h2>Transforme sua vida agora!</h2>
+        <ul class="bullet-points">
+            <li>Destrua o condicionamento de pobreza em sua mente.</li>
+            <li>Desmascare a verdadeira razão pela qual você ainda está quebrado.</li>
+            <li>Quebre o ciclo geracional agora mesmo.</li>
+        </ul>
+    </div>
+
+    <!-- Escassez -->
+    <div class="scarcity">
+        <p>Only 17 copies left at this insane price. After that, we triple it.</p>
+    </div>
+
+    <!-- Testemunhos -->
+    <div class="testimonials">
+        <h2>O que as pessoas estão dizendo:</h2>
+        <p>"Eu estava quebrado. Agora faço R$10k por semana." – João M.</p>
+        <p>"Minha vida mudou completamente depois de ler esse livro. Não sou mais o mesmo." – Ana S.</p>
+    </div>
+
+    <!-- Garantia -->
+    <div class="section">
+        <h2>30-Day No BS Guarantee</h2>
+        <p>Don’t feel the shift? We refund. No questions.</p>
+    </div>
+
+    <!-- Contador de Urgência -->
+    <div class="countdown">
+        <p>⏱️ Oferta expira em: <span id="timer"></span></p>
+    </div>
+
+    <!-- Seção de CTA final -->
+    <div class="footer">
+        <p><strong>Buy it. Or stay poor. Your move.</strong></p>
+        <a href="https://pay.kiwify.com.br/4NmvvvJ" class="cta-btn">Buy Now</a>
+    </div>
+
+    <script>
+        // Configuração do contador de tempo
+        var countdownDate = new Date().getTime() + 600000; // 10 minutos
+        var countdownFunction = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countdownDate - now;
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("timer").innerHTML = minutes + "m " + seconds + "s ";
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("timer").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
